@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Recurrencia.Controller;
+using Recurrencia.Model;
 namespace Recurrencia
 {
     public partial class ClientOrder : Form
@@ -64,7 +65,7 @@ namespace Recurrencia
             {
                 total += (int)row.Cells[4].Value;
             }
-            Total.Text = total.ToString();
+            Total_TXT.Text = total.ToString();
         }
 
       
@@ -125,6 +126,29 @@ namespace Recurrencia
              
             }
         }
+
+        private void SaveOrderBTN_Click(object sender, EventArgs e)
+        {
+            DataAcces access = new DataAcces();
+            int id =Convert.ToInt16( CDGTXT.Text);
+            DateTime orderDate = DateTime.Now;
+            DateTime requireDate = ReleaseDate_Picker.Value;
+            int total = Convert.ToInt32( Total_TXT.Text);
+            Order order = new Order(id,orderDate,requireDate,total);
+            access.saveOrder(order);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClientOrder_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
      
 
