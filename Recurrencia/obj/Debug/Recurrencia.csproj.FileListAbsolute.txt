@@ -1,0 +1,14 @@
+c:\users\kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\bin\Debug\Recurrencia.exe.config
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\bin\Debug\Recurrencia.exe
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\bin\Debug\Recurrencia.pdb
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.Properties.Resources.resources
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.csproj.GenerateResource.Cache
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.exe
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.pdb
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.Login.resources
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.NewClient.resources
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.Home.resources
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.NewUser.resources
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.NewProduct.resources
+C:\Users\Kevin\documents\visual studio 2013\Projects\Recurrencia\Recurrencia\obj\Debug\Recurrencia.EditProduct.resources
