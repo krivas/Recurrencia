@@ -385,7 +385,52 @@ namespace Recurrencia.Controller
 
         }
 
-        
+        public void saveOrder(Order order)
+        {
+            command = new SqlCommand("Insert into Orden (ID_Cliente,Fecha_Orden,Fecha_Entrega,Total) Values (@id,@OrderDate,@RequireDate,@total)", conecction);
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@id";
+            parameter.Value =order.IdClient;
+            parameter.SqlDbType = SqlDbType.Int;
+            command.Parameters.Add(parameter);
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@OrderDate";
+            parameter.Value = order.OriginDate;
+            parameter.SqlDbType = SqlDbType.DateTime;
+            command.Parameters.Add(parameter);
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@RequireDate";
+            parameter.Value = order.ReleaseDate;
+            parameter.SqlDbType = SqlDbType.DateTime;
+            command.Parameters.Add(parameter);
+            parameter = new SqlParameter();
+
+            parameter.ParameterName = "@total";
+            parameter.Value = order.Total;
+            parameter.SqlDbType = SqlDbType.Int;
+            command.Parameters.Add(parameter);
+
+
+            try
+            {
+                conecction.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Orden agregada");
+                conecction.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! " + ex);
+            }
+            finally
+            {
+                conecction.Close();
+            }
+    
+        }
 
         public void UpdateProduct(Product product)
         {
