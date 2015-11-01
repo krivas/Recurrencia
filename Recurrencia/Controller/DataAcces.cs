@@ -387,7 +387,7 @@ namespace Recurrencia.Controller
 
         public void saveOrder(Order order)
         {
-            command = new SqlCommand("Insert into Orden (ID_Cliente,Fecha_Orden,Fecha_Entrega,Total) Values (@id,@OrderDate,@RequireDate,@total)", conecction);
+            command = new SqlCommand("Insert into Ordenes (ID_Cliente,Fecha_Orden,Fecha_Entrega,Total) Values (@id,@OrderDate,@RequireDate,@total)", conecction);
 
             parameter = new SqlParameter();
             parameter.ParameterName = "@id";
@@ -430,6 +430,76 @@ namespace Recurrencia.Controller
                 conecction.Close();
             }
     
+        }
+
+        public void saveOrderProducts(Product product)
+        {
+            command = new SqlCommand("Insert into Pedidos (ID_Orden,ID_Producto,Cantidad,Precio) Values (@idOrder,@idProduct,@quantity,@price)", conecction);
+            int id =lastOrderId();
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@idOrder";
+            parameter.Value = id;
+            parameter.SqlDbType = SqlDbType.Int;
+            command.Parameters.Add(parameter);
+
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@idProduct";
+            parameter.Value = product.Id;
+            parameter.SqlDbType = SqlDbType.Int;
+            command.Parameters.Add(parameter);
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@quantity";
+            parameter.Value =product.Quantity;
+            parameter.SqlDbType = SqlDbType.Int;
+            command.Parameters.Add(parameter);
+
+            parameter = new SqlParameter();
+            parameter.ParameterName = "@price";
+            parameter.Value = product.Price;
+            parameter.SqlDbType = SqlDbType.Int;
+            command.Parameters.Add(parameter);
+
+            try
+            {
+                conecction.Open();
+                command.ExecuteNonQuery();
+                MessageBox.Show("pedido agregado");
+                conecction.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! " + ex);
+            }
+            finally
+            {
+                conecction.Close();
+            }
+
+        }
+
+        private int lastOrderId()
+        {
+            SqlCommand tempCommand = new SqlCommand("Select top 1 ID_Orden from Ordenes order by ID_Orden desc;", conecction);
+            try
+            {
+                conecction.Open();
+               int orderId = (int) tempCommand.ExecuteScalar();
+                conecction.Close();
+                return orderId;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! " + ex);
+            }
+            finally
+            {
+                conecction.Close();
+            }
+
+            return 0;
         }
 
         public void UpdateProduct(Product product)
