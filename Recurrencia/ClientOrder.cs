@@ -130,12 +130,23 @@ namespace Recurrencia
         private void SaveOrderBTN_Click(object sender, EventArgs e)
         {
             DataAcces access = new DataAcces();
-            int id =Convert.ToInt16( CDGTXT.Text);
+            int idClient =Convert.ToInt16( CDGTXT.Text);
             DateTime orderDate = DateTime.Now;
             DateTime requireDate = ReleaseDate_Picker.Value;
             int total = Convert.ToInt32( Total_TXT.Text);
-            Order order = new Order(id,orderDate,requireDate,total);
+            Order order = new Order(idClient,orderDate,requireDate,total);
             access.saveOrder(order);
+           
+            
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                int id = (int)row.Cells[0].Value;
+                int quantity = (int)row.Cells[2].Value;
+                int price = (int)row.Cells[3].Value;
+                Product product = new Product(id, price, quantity);
+                access.saveOrderProducts(product);
+            }
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
