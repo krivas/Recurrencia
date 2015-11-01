@@ -10,6 +10,15 @@ namespace Recurrencia.Model
     {
         private int _idClient;
 
+        private int _IdOrder;
+
+        public int IdOrder
+        {
+            get { return _IdOrder; }
+            set { _IdOrder = value; }
+        }
+
+
         public int IdClient
         {
             get { return _idClient; }
@@ -37,9 +46,9 @@ namespace Recurrencia.Model
            get { return _total; }
            set { _total = value; }
        }
-       public Order(int id, DateTime orderDate, DateTime requireDate, int total)
+       public Order(int idClient, DateTime orderDate, DateTime requireDate, int total)
        {
-           this._idClient = id;
+           this._idClient = idClient;
            this._originDate = orderDate;
            this._releaseDate = requireDate;
            this._total = total;
