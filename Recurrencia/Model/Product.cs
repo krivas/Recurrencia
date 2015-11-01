@@ -53,6 +53,15 @@ namespace Recurrencia.Model
 
         }
 
+        public Product(int id, int price, int quantity)
+        {
+
+            this.Id = id;
+            this.Price = price;
+            this.Quantity=quantity;
+
+        }
+
 
     }
 }
