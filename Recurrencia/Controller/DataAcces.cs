@@ -275,6 +275,20 @@ namespace Recurrencia.Controller
 
         }
 
+        public void displayPendingOrders(DataGridView datagrid)
+        {
+            string ordenes = "select C.Nombre,O.Fecha_Entrega,T.Producto,"+
+                            "C.Telefono_Celular,C.Telefono_Hogar,C.Telefono_Trabajo from Ordenes O "+
+                             "join Clientes C on (O.ID_Cliente=C.ID_Cliente)" +
+                            "join Pedidos P  on (P.ID_Orden=O.ID_Orden)" +
+                            "join Productos T on (T.ID_Producto=P.ID_Producto)" +
+                            "where Fecha_Entrega >=getdate()"+
+                             "order by Fecha_Entrega;";
+            SqlDataAdapter dataadapter = new SqlDataAdapter(ordenes, conecction);
+            DataSet ds = new DataSet();
+            dataadapter.Fill(ds, "Clientes");
+            datagrid.DataSource = ds.Tables[0];
+        }
 
         public void searchProductById(string id,DataGridView datagrid)
         {
@@ -555,6 +569,6 @@ namespace Recurrencia.Controller
         
         }
 
-
+       
     }
 }

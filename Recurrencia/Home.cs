@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Recurrencia.Controller;
 
 namespace Recurrencia
 {
@@ -19,8 +20,9 @@ namespace Recurrencia
 
         private void Home_Load(object sender, EventArgs e)
         {
-
-
+            DataAcces acces = new DataAcces();
+            acces.displayPendingOrders(this.dataGridView1);
+            
 
         }
 
@@ -55,5 +57,6 @@ namespace Recurrencia
             client.ShowDialog();
 
         }
+
     }
 }
