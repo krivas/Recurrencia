@@ -134,6 +134,11 @@ namespace Recurrencia
             DateTime orderDate = DateTime.Now;
             DateTime requireDate = ReleaseDate_Picker.Value;
             int total = Convert.ToInt32( Total_TXT.Text);
+            if (requireDate.Equals(orderDate) || requireDate < orderDate)
+            {
+                MessageBox.Show("La fecha de entrega debe ser mayor a la fecha actual");
+                return;
+            }
             Order order = new Order(idClient,orderDate,requireDate,total);
             access.saveOrder(order);
            
@@ -146,7 +151,12 @@ namespace Recurrencia
                 Product product = new Product(id, price, quantity);
                 access.saveOrderProducts(product);
             }
-
+            
+            dataGridView1.Rows.Clear();
+            CDGTXT.Clear();
+            Total_TXT.Clear();
+            NOMTXT.Clear();
+            APTXT.Clear();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
