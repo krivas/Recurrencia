@@ -20,8 +20,7 @@ namespace Recurrencia
 
         private void Home_Load(object sender, EventArgs e)
         {
-            DataAcces acces = new DataAcces();
-            acces.displayPendingOrders(this.dataGridView1);
+            RefreshDatagrid();
             
 
         }
@@ -57,6 +56,20 @@ namespace Recurrencia
             client.ShowDialog();
 
         }
+
+        private void ordenarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientOrder order = new ClientOrder(this);
+            order.ShowDialog();
+        }
+
+        public void RefreshDatagrid()
+         {
+              DataAcces acces = new DataAcces();
+            acces.displayPendingOrders(this.dataGridView1);
+         }
+
+       
 
     }
 }

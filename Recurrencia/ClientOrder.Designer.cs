@@ -46,10 +46,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FindBTN = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.Total = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Total_TXT = new System.Windows.Forms.TextBox();
+            this.ReleaseDate_Picker = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.SaveOrder = new System.Windows.Forms.Button();
+            this.SaveOrderBTN = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Establecer orden";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // APTXT
             // 
@@ -226,25 +227,25 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Total:";
             // 
-            // Total
+            // Total_TXT
             // 
-            this.Total.Enabled = false;
-            this.Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.ForeColor = System.Drawing.Color.Red;
-            this.Total.Location = new System.Drawing.Point(547, 427);
-            this.Total.Multiline = true;
-            this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(100, 24);
-            this.Total.TabIndex = 8;
-            this.Total.Text = "0";
-            this.Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Total_TXT.Enabled = false;
+            this.Total_TXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total_TXT.ForeColor = System.Drawing.Color.Red;
+            this.Total_TXT.Location = new System.Drawing.Point(547, 427);
+            this.Total_TXT.Multiline = true;
+            this.Total_TXT.Name = "Total_TXT";
+            this.Total_TXT.Size = new System.Drawing.Size(100, 24);
+            this.Total_TXT.TabIndex = 8;
+            this.Total_TXT.Text = "0";
+            this.Total_TXT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dateTimePicker1
+            // ReleaseDate_Picker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(279, 429);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.ReleaseDate_Picker.Location = new System.Drawing.Point(279, 429);
+            this.ReleaseDate_Picker.Name = "ReleaseDate_Picker";
+            this.ReleaseDate_Picker.Size = new System.Drawing.Size(200, 20);
+            this.ReleaseDate_Picker.TabIndex = 9;
             // 
             // label7
             // 
@@ -256,26 +257,27 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Fecha de Entrega";
             // 
-            // SaveOrder
+            // SaveOrderBTN
             // 
-            this.SaveOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveOrder.ForeColor = System.Drawing.Color.Black;
-            this.SaveOrder.Location = new System.Drawing.Point(653, 425);
-            this.SaveOrder.Name = "SaveOrder";
-            this.SaveOrder.Size = new System.Drawing.Size(117, 31);
-            this.SaveOrder.TabIndex = 16;
-            this.SaveOrder.Text = "Guardar Orden";
-            this.SaveOrder.UseVisualStyleBackColor = true;
+            this.SaveOrderBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveOrderBTN.ForeColor = System.Drawing.Color.Black;
+            this.SaveOrderBTN.Location = new System.Drawing.Point(653, 425);
+            this.SaveOrderBTN.Name = "SaveOrderBTN";
+            this.SaveOrderBTN.Size = new System.Drawing.Size(117, 31);
+            this.SaveOrderBTN.TabIndex = 16;
+            this.SaveOrderBTN.Text = "Guardar Orden";
+            this.SaveOrderBTN.UseVisualStyleBackColor = true;
+            this.SaveOrderBTN.Click += new System.EventHandler(this.SaveOrderBTN_Click);
             // 
             // ClientOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 465);
-            this.Controls.Add(this.SaveOrder);
+            this.Controls.Add(this.SaveOrderBTN);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.Total);
+            this.Controls.Add(this.ReleaseDate_Picker);
+            this.Controls.Add(this.Total_TXT);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.FindBTN);
             this.Controls.Add(this.label4);
@@ -283,6 +285,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ClientOrder";
             this.Text = "Order";
+            this.Load += new System.EventHandler(this.ClientOrder_Load);
             this.Enter += new System.EventHandler(this.ClientOrder_Enter);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -307,10 +310,10 @@
         private System.Windows.Forms.TextBox APTXT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox Total;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox Total_TXT;
+        private System.Windows.Forms.DateTimePicker ReleaseDate_Picker;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button SaveOrder;
+        private System.Windows.Forms.Button SaveOrderBTN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

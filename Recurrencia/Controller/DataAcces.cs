@@ -211,18 +211,12 @@ namespace Recurrencia.Controller
         public void insertProduct(Product product)
         {
 
-            command = new SqlCommand("Insert into Productos (Producto,Cantidad,Precio_Unidad,Comentario) Values (@producto,@cantidad,@precio,@comentario)", conecction);
+            command = new SqlCommand("Insert into Productos (Producto,Precio_Unidad,Comentario) Values (@producto,@precio,@comentario)", conecction);
 
             parameter = new SqlParameter();
             parameter.ParameterName = "@producto";
             parameter.Value = product.Description;
             parameter.SqlDbType = SqlDbType.VarChar;
-            command.Parameters.Add(parameter);
-
-            parameter = new SqlParameter();
-            parameter.ParameterName = "@cantidad";
-            parameter.Value = product.Quantity;
-            parameter.SqlDbType = SqlDbType.Int;
             command.Parameters.Add(parameter);
 
             parameter = new SqlParameter();

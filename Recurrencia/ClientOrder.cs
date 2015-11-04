@@ -13,12 +13,13 @@ namespace Recurrencia
 {
     public partial class ClientOrder : Form
     {
-       
-        
-       
 
-        public ClientOrder()
+
+        private Home formulario;
+
+        public ClientOrder(Home home)
         {
+            formulario = home;
             InitializeComponent();
         }
 
@@ -141,17 +142,17 @@ namespace Recurrencia
             }
             Order order = new Order(idClient,orderDate,requireDate,total);
             access.saveOrder(order);
-           
+          
             
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 int id = (int)row.Cells[0].Value;
-                int quantity = (int)row.Cells[2].Value;
+                int quantity = Convert.ToInt32( row.Cells[2].Value);
                 int price = (int)row.Cells[3].Value;
                 Product product = new Product(id, price, quantity);
                 access.saveOrderProducts(product);
             }
-            
+            formulario.RefreshDatagrid();
             dataGridView1.Rows.Clear();
             CDGTXT.Clear();
             Total_TXT.Clear();
