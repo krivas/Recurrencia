@@ -30,8 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comentarioTxt = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.precioTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.productoTxt = new System.Windows.Forms.TextBox();
@@ -48,8 +46,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comentarioTxt);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.precioTxt);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.productoTxt);
@@ -60,7 +56,7 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(457, 333);
+            this.groupBox1.Size = new System.Drawing.Size(457, 273);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Producto";
@@ -68,30 +64,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(317, 294);
+            this.button1.Location = new System.Drawing.Point(317, 230);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 18;
             this.button1.Text = "Modificar Producto";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comentarioTxt
-            // 
-            this.comentarioTxt.Location = new System.Drawing.Point(9, 249);
-            this.comentarioTxt.Name = "comentarioTxt";
-            this.comentarioTxt.Size = new System.Drawing.Size(432, 39);
-            this.comentarioTxt.TabIndex = 16;
-            this.comentarioTxt.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 233);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Comentario:";
             // 
             // precioTxt
             // 
@@ -170,7 +149,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 360);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 302);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -183,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 595);
+            this.ClientSize = new System.Drawing.Size(487, 511);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "EditProduct";
@@ -204,8 +183,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox comentarioTxt;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox precioTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox productoTxt;

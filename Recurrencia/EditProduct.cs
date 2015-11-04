@@ -48,7 +48,7 @@ namespace Recurrencia
                 productoTxt.Text = row.Cells[1].Value.ToString();
                
                 precioTxt.Text = row.Cells[2].Value.ToString();
-                comentarioTxt.Text = row.Cells[3].Value.ToString();
+              
                
             }
 
@@ -67,8 +67,8 @@ namespace Recurrencia
                 int price = int.Parse(precioTxt.Text);
 
 
-                string comment = comentarioTxt.Text;
-                Product product = new Product(description, price, comment);
+             
+                Product product = new Product(description, price);
 
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
@@ -79,7 +79,7 @@ namespace Recurrencia
                 dataAcces.displayProducts(dataGridView1);
                 productoTxt.Clear();
                 precioTxt.Clear();
-                comentarioTxt.Clear();
+               
              
                 
             }

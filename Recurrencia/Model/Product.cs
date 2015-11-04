@@ -44,12 +44,12 @@ namespace Recurrencia.Model
             set { _description = value; }
         }
 
-        public Product(string description,int price,string comment)
+        public Product(string description,int price)
         {
             
             this.Description = description;
             this.Price = price;
-            this.Comment = comment;
+            
 
         }
 

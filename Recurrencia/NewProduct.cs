@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Recurrencia.Controller;
 using Recurrencia.Model;
 
+
 namespace Recurrencia
 {
     public partial class NewProduct : Form
@@ -26,13 +27,11 @@ namespace Recurrencia
             try
             {
                 string description = productoTxt.Text;
-                int quantity = int.Parse(cantidadTxt.Text);
                 int price = int.Parse(precioTxt.Text);
                 string comment = comentarioTxt.Text;
-                Product product = new Product(description, price, comment);
+                Product product = new Product(description, price);
                 dataAcces.insertProduct(product);
                 productoTxt.Clear();
-                cantidadTxt.Clear();
                 precioTxt.Clear();
                 comentarioTxt.Clear();
             }
@@ -44,6 +43,11 @@ namespace Recurrencia
 
 
             
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
        
